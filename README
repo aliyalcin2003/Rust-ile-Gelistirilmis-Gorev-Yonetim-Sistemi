@@ -1,0 +1,34 @@
+# Rust ile Geliştirilmiş Görev Yönetim Sistemi
+
+Bu proje, Rust programlama dili kullanılarak geliştirilmiş, konsol tabanlı ve veri sürekliliğine (data persistence) sahip bir **Görev Yönetim Sistemi** uygulamasıdır. Proje, yüksek performanslı bellek yönetimi, güvenli veri işleme ve nesne yönelimli veri modelleme prensipleri dikkate alınarak tasarlanmıştır.
+
+## 🚀 Öne Çıkan Özellikler
+
+*   **Güvenlik Kontrolü (Authentication):** Sistem başlatıldığında kullanıcıyı karşılayan bir şifre doğrulama mekanizması (`admin123`) mevcuttur.
+*   **Veri Sürekliliği (JSON Entegrasyonu):** Görevler, `serde` ve `serde_json` kütüphaneleri kullanılarak `gorevler.json` dosyasına insan tarafından okunabilir (pretty-printed) formatta kaydedilir ve program açıldığında otomatik yüklenir.
+*   **Boş Veri Engelleme (Hata Toleransı):** Görev adı girişlerinde null veya boş string gönderilmesi mantıksal kontrollerle engellenmiştir.
+*   **Modüler Kullanıcı Yönetimi Alt Menüsü:** Ana menüyü kirletmemek adına tasarlanan alt menü sayesinde sistemdeki benzersiz kullanıcılar listelenebilir veya bir kullanıcı silindiğinde ona ait tüm görevler ilişkisel olarak temizlenebilir.
+*   **Güvenli ID Yönetimi:** Görev silme işlemlerinden sonra ID çakışmalarını önleyen dinamik maksimum ID bulma algoritması entegre edilmiştir.
+*   **Stres Testi & Simülasyon Modu:** Gerçek dünya senaryolarını test etmek amacıyla, tek tuşla sisteme **1000+ farklı kullanıcı** varyasyonu ve **500+ aktif görev** pompalayan yüksek yük (stres) testi modülü içerir.
+
+## 🛠️ Kullanılan Teknolojiler ve Bağımlılıklar
+
+*   **Dil:** Rust (Edition 2024)
+*   **Serileştirme/De-serileştirme:** `serde` (v1.0.228) & `serde_json` (v1.0.150)
+*   **Giriş/Çıkış Yönetimi:** Standart `std::io` ve `std::fs` kütüphaneleri
+
+## 📂 Sistem Menü Yapısı
+
+```text
+===== GÖREV YÖNETİM SİSTEMİ =====
+1 - Görev Ekle (Kullanıcı Atamalı & Boş Veri Korumalı)
+2 - Görevleri Listele (Ekran Dondurma Korumalı)
+3 - Görev Sil (ID Tabanlı)
+4 - Tüm Görevleri Sil (Onay Mekanizmalı)
+5 - Görevi Tamamla
+6 - Görev Güncelle (Aynı İsim Engelleme Korumalı)
+7 - İstatistik Göster (Toplam / Tamamlanan / Devam Eden)
+8 - Tamamlanan Görevleri Temizle (Toplu .retain() Filtreleme)
+9 - Kullanıcı Seçenekleri (Alt Menü: Listele / İlişkisel Sil)
+10 - Simülasyon Başlat (500 Görev Stres Testi)
+11 - Çıkış
