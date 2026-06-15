@@ -32,3 +32,26 @@ Bu proje, Rust programlama dili kullanılarak geliştirilmiş, konsol tabanlı v
 9 - Kullanıcı Seçenekleri (Alt Menü: Listele / İlişkisel Sil)
 10 - Simülasyon Başlat (500 Görev Stres Testi)
 11 - Çıkış
+
+
+⚙️ Kurulum ve Çalıştırma
+Projeyi lokal bilgisayarınızda çalıştırmak için aşağıdaki adımları izleyebilirsiniz:
+
+1- Projeyi klonlayın veya indirin.
+2- Terminal veya komut satırında proje dizinine gidin:
+cd "Rust ile Geliştirilmiş Görev Yönetim Sistemi"
+
+3- Projeyi derleyin ve çalıştırın:
+cargo run
+
+4- Sistem başlangıcında giriş şifresi olarak admin123 değerini girin.
+
+Geliştirici: Ali Yalçın
+Bu proje İleri Veri Tabanı Uygulamaları dersi kapsamında bir yazılım prototipi olarak geliştirilmiştir.
+
+### 💡 Nasıl Yüklenecek?
+1. GitHub deponun ana sayfasına gir.
+2. Sağ üstteki **Add file -> Create new file** butonuna bas.
+3. Dosya adı yerine tam olarak **`README.md`** yaz (küçük/büyük harfe dikkat).
+4. Yukarıdaki gri kod kutusunun içindeki her şeyi kopyalayıp aşağıdaki büyük metin alanına yapıştır.
+5. Sayfanın en altındaki yeşil **Commit changes** butonuna basarak kaydet.
