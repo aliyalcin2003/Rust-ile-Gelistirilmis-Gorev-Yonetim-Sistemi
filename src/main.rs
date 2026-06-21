@@ -2,7 +2,7 @@ use serde::{Deserialize, Serialize};
 use std::fs;
 use std::io;
 use colored::Colorize;
-use chrono::Local; // Tarih ve saat kütüphanesi dahil edildi
+use chrono::Local; 
 
 #[derive(Serialize, Deserialize)]
 struct Gorev {
@@ -10,7 +10,7 @@ struct Gorev {
     kullanici: String,
     ad: String,
     tamamlandi: bool,
-    tarih: String, // Görevlere tarih özelliği eklendi
+    tarih: String, 
 }
 
 fn gorevleri_kaydet(gorevler: &Vec<Gorev>) {
@@ -75,7 +75,7 @@ fn main() {
                     continue;
                 }
 
-                // O anki tarih ve saati gün/ay/yıl - saat/dakika formatında alıyoruz
+                
                 let anlik_tarih = Local::now().format("%d.%m.%Y - %H:%M").to_string();
 
                 gorevler.push(Gorev {
@@ -352,7 +352,7 @@ fn main() {
                         kullanici: simule_kullanici,
                         ad: format!("Sistem Test Görevi #{}", i),
                         tamamlandi: i % 3 == 0,
-                        tarih: anlik_tarih.clone(), // Test görevlerine de aynı tarih basılıyor
+                        tarih: anlik_tarih.clone(), 
                     });
                     
                     sonraki_id += 1;
